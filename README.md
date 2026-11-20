@@ -34,7 +34,7 @@ Each individual is a subset of features, encoded as a binary mask over the colum
 
 Run settings: population 50, 10 parents selected, 10 generations, mutation rate 0.2, 5 elites. The notebook plots the best AIC per generation.
 
-Fitted on all 14 features, the baseline model has RSS = 417.0 and AIC = 154.9.
+**Result:** the GA selected `Density, Age, Chest, Hip`, with **AIC 121.4**. The baseline model on all 14 features has AIC 154.9 (RSS 417.0). The GA is unseeded, so the selected subset can change from run to run.
 
 ## Run it
 ```bash
@@ -45,4 +45,4 @@ jupyter notebook
 ## Next steps
 - Compare with `scipy.optimize` and a baseline random search.
 - Body-fat GA: drop `Density`, since body fat % is computed from it (Siri's equation), so including it leaks the target.
-- Body-fat GA: print the selected feature subset and compare its AIC and held-out error with the full model.
+- Body-fat GA: set a random seed, and compare held-out error of the selected subset with the full model.
